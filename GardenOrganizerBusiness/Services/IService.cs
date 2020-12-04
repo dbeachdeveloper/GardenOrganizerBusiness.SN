@@ -7,12 +7,12 @@ namespace Business.Services
 {
     public interface IService
     {
-        Task Get();
+        Task<T> Get<T>() where T : class, new();
 
-        Task Post();
+        Task Post<T>(T Model) where T : class, new();
 
-        Task Put();
+        Task Put<T>(T Model) where T : class, new();
 
-        Task Delete();
+        Task Delete<T>(T Model) where T : class, new();
     }
 }
