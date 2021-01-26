@@ -11,15 +11,15 @@ namespace Business.Models
         public string Manufacturer { get; set; } = string.Empty;
         public DateTime PurchaseDate { get; set; } = DateTime.Now;
         [Required]
-        public string VegetableType { get; set; } = string.Empty;
+        public string Type { get; set; } = string.Empty;
         [Required]
         public string Variety { get; set; } = string.Empty;
         public int MinSproutInDays { get; set; } = 0;
         public int MaxSproutInDays { get; set; } = 1;
         public int MinTemperature { get; set; } = 0;
         public int MaxTemperature { get; set; } = 1;
-        public float SeedDepth { get; set; } = 0.5F;
-        public int PlantSpacing { get; set; } = 6;
+        public string SeedDepth { get; set; } = "1 inch";
+        public string PlantSpacing { get; set; } = "12 inches";
         public bool FrostHardy { get; set; } = false;
         public int MinSun { get; set; } = 0;
         public int MaxSun { get; set; } = 1;
@@ -28,8 +28,9 @@ namespace Business.Models
         {
             get
             {
-                string format = "image/png";
-                return $"data:{format};base64,{Convert.ToBase64String(ByteImage)}";
+                //string format = "image/png";
+                //return $"data:{format};base64,{Convert.ToBase64String(ByteImage)}";
+                return string.Empty;
             }
         }
         public string SproutDays
@@ -67,7 +68,6 @@ namespace Business.Models
                 }
             }
         }
-
         public string Purchase
         {
             get
